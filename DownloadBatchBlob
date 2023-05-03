@@ -1,0 +1,8 @@
+clear
+$acName = "<storage_acoount_name>"
+$acKey = "<storage_account_key" #Access key for your storage account
+$acCN = "<container_name>" 
+$localFolder = 'd:\temp\download' #Local folder 
+
+#Download all test files in the container
+az storage blob download-batch  --destination $localFolder --source $acCN --account-key  $acKey --account-name $acName   --pattern '*.txt'
