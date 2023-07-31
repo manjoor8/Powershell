@@ -1,3 +1,5 @@
+#Below script will give you all Wifi SSID and password stored in your system
+
 $ssidPasswordArray = @()
 $netshOutput = netsh wlan show profiles
 $ssidNames = $netshOutput | Select-String -Pattern 'All User Profile\s+:\s+(.+)'
