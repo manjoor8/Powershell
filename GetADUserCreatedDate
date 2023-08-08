@@ -11,7 +11,7 @@ foreach($u in $users){
     Add-Member -InputObject $object -MemberType NoteProperty -Name UserName -Value "" 
     Add-Member -InputObject $object -MemberType NoteProperty -Name CreatedDate -Value $d
     $object.UserName = $u.UserPrincipalName
-	$d =  (Get-AzureADUserExtension -ObjectId $u.ObjectId).createdDateTime
+    $d =  (Get-AzureADUserExtension -ObjectId $u.ObjectId).createdDateTime
     $object.CreatedDate = [datetime]::parseexact($d, 'dd/MM/yyyy HH:mm:ss', $null)
     $ul += $object
  }
