@@ -5,7 +5,7 @@ $versionToInstall = "7.0.9"
 $installerPath = "$env:TEMP\dotnet_installer.exe"
 
 try {
-  $versionInfo = Get-ChildItem -Path "HKLM:\SOFTWARE\dotnet\Setup\InstalledVersions\x64"  -ErrorAction SilentlyContinue
+  $versionInfo = Get-ChildItem -Path "HKLM:\SOFTWARE\dotnet\Setup\InstalledVersions\x64"  -ErrorAction Stop
   $version = $versionInfo.GetValue("Version") 
 }
 catch {}
